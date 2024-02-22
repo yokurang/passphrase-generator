@@ -1,0 +1,16 @@
+[package]
+name = "markov-phrasegens"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]]
+name = "markov-phrasegens"
+path = "src/main.rs"
+
+[include] # train files are in the traindata directory
+files = ["src/**/*", "traindata/**/*"]
+
+[dependencies]
+rand = "*"
