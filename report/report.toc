@@ -1,0 +1,12 @@
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
+\contentsline {section}{\numberline {2}Data Collection and Preprocessing}{3}{section.2}%
+\contentsline {section}{\numberline {3}Problem Statement}{3}{section.3}%
+\contentsline {section}{\numberline {4}Assumptions and Limitations}{3}{section.4}%
+\contentsline {section}{\numberline {5}Core Concepts}{4}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Transition Matrix Creation}{4}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Markov Chain for Passphrase Generation}{4}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Generating the Passphrase}{5}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Installation and Running the Project}{6}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Installation}{6}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Running the Project}{6}{subsection.6.2}%
+\contentsline {section}{\numberline {7}Conlusion}{6}{section.7}%

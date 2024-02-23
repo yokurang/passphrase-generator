@@ -110,7 +110,7 @@ Follow these steps to install Rust and Cargo on your system:
 With Rust and Cargo installed, you can now run the Markov Phrase Generator project.
 
 1. **Clone the Project:**
-   If the project is hosted on a version control system like GitHub, clone it to your local machine using:
+   Start by cloning the project repository to your local machine using Git. Run the following command in your terminal or command prompt:
    ```bash
    git clone https://github.com/yokurang/passphrase-generator.git 
    ```
@@ -128,7 +128,7 @@ With Rust and Cargo installed, you can now run the Markov Phrase Generator proje
    ```
 
 4. **Run the Project:**
-   After building, run the executable with an optional argument specifying the desired length of the passphrase. If no length is provided, a default value will be used. For example, to generate a passphrase of length 12, use:
+   After building, run the executable with an argument specifying the desired length of the passphrase:
    ```bash
    cargo run -- 12
    ```
