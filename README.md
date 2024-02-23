@@ -4,12 +4,6 @@
 
 The Markov Phrase Generator is a simple passphrase generator that utilizes Markov chains to generate passphrases based on a given training text. This project demonstrates how to apply Markov chains for text generation by creating a transition matrix from the training data and then using it to generate new phrases.
 
-This README contains the following sections:
-- [Core Concepts](#core-concepts)
-- [Prerequisites](#prerequisites)
-- [Running the Project](#running-the-project)
-- [Applications](#applications)
-
 ## Core Concepts
 
 ### Transition Matrix Creation
