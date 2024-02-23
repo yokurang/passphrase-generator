@@ -149,12 +149,12 @@ This document presents the design and implementation of a Markov Phrase Generato
 \section{Introduction}
 The Markov Phrase Generator is a passphrase generation tool that leverages the statistical model of Markov chains. By analyzing a corpus of text, it creates a transition matrix that models the likelihood of sequences of words, allowing for the generation of new, semantically plausible phrases.
 
-One application of this tool is in the context of cryptocurrency wallets, where secure and memorable passphrases are essential for authorizing transactions and recovering accounts. The Markov Phrase Generator aims to address the challenge of creating such passphrases by offering a balance between security and memorability by leveraging the linguistic patterns found in a chosen corpus of text.
+One application of this tool is in the context of cryptocurrency wallets, where secure and memorable passphrases are essential for authorizing transactions and recovering accounts. The Markov Phrase Generator aims to address the challenge of creating such passphrases by offering a balance between security and memorability, leveraging the linguistic patterns found in a chosen corpus of text.
 
 \section{Data Collection and Preprocessing}
 The training data for the Markov Phrase Generator project was sourced from a collection of verses from Kanye West's songs, available on the Kaggle dataset titled \href{https://www.kaggle.com/viccalexander/kanyewestverses}{Kanye West Verses}.
 This dataset comprises various lines from Kanye West's discography, providing a rich corpus of contemporary language use and stylistic phrasing. The choice of this dataset was motivated by its diversity in vocabulary and syntax, enabling the generation of creative and memorable passphrases.
-Furthermore, with regards to security, the dataset's distinct style and content can contribute to the uniqueness and unpredictability of the generated passphrases, such that the probability of the tool generating the same phrase twice is extremely low.
+Furthermore, with regards to security, the dataset's vast collection of verses increases the likelihood that the tool will not generate the same passphrase twice, enhancing the security of the generated passphrases.
 
 Prior to usage, we need to preprocess the data to ensure that the Markov chain model can effectively capture the linguistic patterns in the training text. This involves cleaning and normalizing the text by removing non-alphabetic characters and converting all words to lowercase. The following Rust function, \texttt{clean\_word}, accomplishes this task efficiently.
 
@@ -169,13 +169,13 @@ Prior to usage, we need to preprocess the data to ensure that the Markov chain m
 
 \section{Problem Statement}
 The problem of generating secure and memorable passphrases for cryptocurrency wallets can be formally stated as a network problem in the context of Markov chains. This problem is formalized as follows: given a network which consists of states represented by pairs of words from the training corpus, and the transitions between these states are determined by the subsequent word that follows a given pair,
-how can we navigate this network (or graph) to construct a sequence of words (passphrase) that is both unpredictable and semantically coherent. 
+how can we navigate this network (or graph) to construct a sequence of words (passphrase) that is both unpredictable and semantically coherent?
 
 \section{Assumptions and Limitations}
 The Markov Phrase Generator operates under several assumptions:
 
 \begin{itemize}
-  \item \textbf{Linguistic Coherence}: It assumes that a sequence of words generated based on the statistical patterns in the training corpus will be semantically coherent and meaningful to users.
+  \item \textbf{Linguistic Coherence}: It assumes that a sequence of words generated based on the statistical patterns in the training corpus will be somewhat coherent and resemble natural language most of the time.
   \item \textbf{Security through Randomness}: The model presumes that by generating passphrases based on a probabilistic method, the outputs will be sufficiently random to ensure security against brute-force or dictionary attacks.
 \end{itemize}
 
@@ -183,7 +183,7 @@ However, there are limitations to this approach:
 
 \begin{itemize}
   \item \textbf{Predictability}: The reliance on a fixed corpus, especially one with a distinctive style like Kanye West's lyrics, may introduce patterns that could potentially be exploited by sophisticated attackers.
-  \item \textbf{Memory vs. Security Trade-off}: While aiming for memorable passphrases, there's a risk that the generated phrases might become too predictable or not secure enough for cryptographic purposes.
+  \item \textbf{Edge Cases of Passphrase Quality}: Since the passphrases are generated probabilistically, there's a risk of edge cases where the generated phrases are too predictable, potentially compromising security, or too nonsensical to be memorable.
   \item \textbf{Cultural Sensitivity}: The content of the training data may reflect the biases or explicit themes of the source material, which might not be appropriate for all users.
 \end{itemize}
 
@@ -235,7 +235,7 @@ fn markov_chain(
 }
 \end{lstlisting}
 
-This function starts with an initial seed (the last word of the starting triplet) and generates a sequence of words by randomly selecting from the list of possible continuations for the current state (the last two words). This randomness introduces variety in the output, making each generated passphrase unique.
+This function starts with an initial seed (the last word of the starting triplet) and generates a sequence of words by randomly selecting from the list of possible continuations for the current state (the last two words). This randomness introduces variety in the output, maximizing the likelihood that each generated passphrase is unique.
 
 \subsection{Generating the Passphrase}
 The \texttt{generate\_passphrase} function orchestrates the passphrase generation process, beginning with reading and cleaning the training data, followed by constructing the transition matrix, and finally generating the passphrase using the Markov chain.
@@ -326,5 +326,7 @@ This command generates a 12-word passphrase, leveraging the linguistic patterns 
 \section{Conlusion}
 
 In conclusion, we were able to implement a Markov Phrase Generator that effectively generates passphrases based on a given training corpus. The project demonstrates the application of Markov chains in text generation, offering a practical tool for enhancing security for cryptocurrency wallets. While mindful of its assumptions and limitations, this project underscores the potential of applying natural language processing techniques in the realm of cybersecurity.
+
+\texttt{"the city what they do it my way to proud to admit"} -- A sample generated passphrase.
 
 \end{document}
