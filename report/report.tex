@@ -151,6 +151,8 @@ The Markov Phrase Generator is a passphrase generation tool that leverages the s
 
 One application of this tool is in the context of cryptocurrency wallets, where secure and memorable passphrases are essential for authorizing transactions and recovering accounts. The Markov Phrase Generator aims to address the challenge of creating such passphrases by offering a balance between security and memorability, leveraging the linguistic patterns found in a chosen corpus of text.
 
+Note that when using this tool, we need to specify the length of the passphrase to be generated. Furthermore, if you want to use a different training corpus, you can add your text file into the \texttt{traindata} directory and modify the \texttt{main.rs} file to use the new file. A \texttt{README.md} file is also included in the accompanying code repository, providing detailed instructions on how to run the project.
+
 \section{Data Collection and Preprocessing}
 The training data for the Markov Phrase Generator project was sourced from a collection of verses from Kanye West's songs, available on the Kaggle dataset titled \href{https://www.kaggle.com/viccalexander/kanyewestverses}{Kanye West Verses}.
 This dataset comprises various lines from Kanye West's discography, providing a rich corpus of contemporary language use and stylistic phrasing. The choice of this dataset was motivated by its diversity in vocabulary and syntax, enabling the generation of creative and memorable passphrases.
@@ -168,7 +170,9 @@ Prior to usage, we need to preprocess the data to ensure that the Markov chain m
 \end{lstlisting}
 
 \section{Problem Statement}
-The problem of generating secure and memorable passphrases for cryptocurrency wallets can be formally stated as a network problem in the context of Markov chains. This problem is formalized as follows: given a network which consists of states represented by pairs of words from the training corpus, and the transitions between these states are determined by the subsequent word that follows a given pair,
+The problem of generating secure and memorable passphrases for cryptocurrency wallets can be formally stated as a network problem in the context of Markov chains.
+
+This problem is formalized as follows: given a network which consists of states represented by pairs of words from the training corpus, and the transitions between these states are determined by the subsequent word that follows a given pair,
 how can we navigate this network (or graph) to construct a sequence of words (passphrase) that is both unpredictable and semantically coherent?
 
 \section{Assumptions and Limitations}

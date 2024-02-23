@@ -4,6 +4,12 @@
 
 The Markov Phrase Generator is a simple passphrase generator that utilizes Markov chains to generate passphrases based on a given training text. This project demonstrates how to apply Markov chains for text generation by creating a transition matrix from the training data and then using it to generate new phrases.
 
+This README contains the following sections:
+- [Core Concepts](#core-concepts)
+- [Prerequisites](#prerequisites)
+- [Running the Project](#running-the-project)
+- [Applications](#applications)
+
 ## Core Concepts
 
 ### Transition Matrix Creation
@@ -134,7 +140,7 @@ With Rust and Cargo installed, you can now run the Markov Phrase Generator proje
    ```
 This command generates a passphrase of length 12 based on the patterns found in "kanye_verses.txt".
 
-Note that the training text "kanye_verses.txt" comes from the Kaggle dataset ["Kanye West Verses"](https://www.kaggle.com/viccalexander/kanyewestverses) and contains a collection of verses from Kanye West's songs.
+Note that the training text "kanye_verses.txt" comes from the Kaggle dataset ["Kanye West Verses"](https://www.kaggle.com/viccalexander/kanyewestverses) and contains a collection of verses from Kanye West's songs. Furthermore, if you would like to use a different training text, you can add your text file to the `traindata` directory and modify the `main.rs` file to use your file instead.
 
 ## Applications
 
