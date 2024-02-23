@@ -265,67 +265,6 @@ fn generate_passphrase(words: Vec<String>, length: usize) -> String {
 
 This function showcases the end-to-end process of generating a passphrase. It starts by cleaning the input words to ensure consistency, creates a transition matrix to capture the linguistic structure of the input text, and then employs the Markov chain to generate a sequence of words that form the passphrase. The choice of starting words (seed) for the Markov chain is randomized to ensure diversity in the generated passphrases.
 
-\section{Installation and Running the Project}
-
-\subsection{Installation}
-
-To get started with the Markov Phrase Generator, you first need to set up Rust and Cargo on your system. Follow these steps:
-
-\begin{enumerate}
-    \item \textbf{Open a Terminal or Command Prompt.}
-
-    \item \textbf{Install Rustup:}
-    Rustup is the installer for the Rust programming language. It also installs Rust and Cargo. Execute the following command:
-
-    \begin{itemize}
-        \item On Unix-based systems (Linux, macOS):
-        
-        \texttt{curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh}
-    \end{itemize}
-
-    \item \textbf{Follow the on-screen instructions:}
-    The installer will guide you through the setup. It's recommended to proceed with the default options.
-
-    \item \textbf{Restart your Terminal or Command Prompt:}
-    This step ensures that your environment variables are updated.
-
-    \item \textbf{Verify Installation:}
-    Confirm that Rust and Cargo are installed by running:
-
-    \texttt{rustc --version}
-
-    This command should return the installed Rust version.
-\end{enumerate}
-
-\subsection{Running the Project}
-
-With Rust and Cargo ready, you can now run the Markov Phrase Generator.
-
-\begin{enumerate}
-    \item \textbf{Clone the Project:}
-    Clone the project repository from GitHub using the following command:
-
-    \texttt{git clone https://github.com/yokurang/passphrase-generator.git}
-
-    \item \textbf{Navigate to the Project Directory:}
-    Change to the project directory:
-
-    \texttt{cd passphrase-generator}
-
-    \item \textbf{Build the Project:}
-    Compile the project using Cargo:
-    
-    \texttt{cargo build}
-
-    \item \textbf{Run the Project:}
-    Launch the executable, specifying the passphrase length:
-    
-    \texttt{cargo run -- 12}
-
-\end{enumerate}
-
-This command generates a 12-word passphrase, leveraging the linguistic patterns found in \texttt{kanye\_verses.txt}.
-
 
 \section{Conlusion}
 
